@@ -1,0 +1,17 @@
+{
+  "name": "github-profile-skillmap",
+  "version": "1.0.0",
+  "description": "Auto-updating skill map for GitHub profile",
+  "main": "generate-skillmap.js",
+  "scripts": {
+    "generate": "node generate-skillmap.js",
+    "update": "node update-skills.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@octokit/rest": "^20.0.2"
+  }
+}
+

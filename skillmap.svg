@@ -1,0 +1,23 @@
+<svg width="600" height="215" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .skill-label { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 14px; fill: #e1e4e8; }
+    .skill-bar { font-family: 'Courier New', monospace; font-size: 14px; fill: #58a6ff; }
+    .skill-percent { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 14px; fill: #8b949e; }
+  </style>
+  <rect width="600" height="215" fill="#0d1117"/>
+  <text x="20" y="40" class="skill-label">TypeScript:</text>
+  <text x="200" y="40" class="skill-bar">██████████████░░░░░░</text>
+  <text x="480" y="40" class="skill-percent">70%</text>
+  <text x="20" y="75" class="skill-label">Tailwind:</text>
+  <text x="200" y="75" class="skill-bar">█████████████░░░░░░░</text>
+  <text x="480" y="75" class="skill-percent">65%</text>
+  <text x="20" y="110" class="skill-label">React:</text>
+  <text x="200" y="110" class="skill-bar">████████████████░░░░</text>
+  <text x="480" y="110" class="skill-percent">80%</text>
+  <text x="20" y="145" class="skill-label">Next.js:</text>
+  <text x="200" y="145" class="skill-bar">███████████████░░░░░</text>
+  <text x="480" y="145" class="skill-percent">75%</text>
+  <text x="20" y="180" class="skill-label">React Native:</text>
+  <text x="200" y="180" class="skill-bar">████████████░░░░░░░░</text>
+  <text x="480" y="180" class="skill-percent">60%</text>
+</svg>
