@@ -19,6 +19,10 @@
 
 ## 📊 GitHub Contributions
 
+### 🎮 Contribution Quest Game
+
+![Contribution Game](./contributions-game.svg)
+
 ### Contribution Calendar
 
 ![Contribution Calendar](./contributions-calendar.svg)

@@ -1,0 +1,87 @@
+<svg width="900" height="650" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#58a6ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#79c0ff;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <style>
+    .game-title { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 24px; font-weight: bold; fill: #58a6ff; }
+    .section-title { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 18px; font-weight: bold; fill: #e1e4e8; }
+    .stat-label { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; fill: #8b949e; }
+    .stat-value { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 28px; font-weight: bold; fill: #e1e4e8; }
+    .level-text { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 36px; font-weight: bold; fill: #58a6ff; }
+    .xp-text { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 14px; fill: #8b949e; }
+    .achievement-name { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 12px; fill: #e1e4e8; font-weight: 600; }
+    .achievement-desc { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 10px; fill: #8b949e; }
+    .streak-text { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 16px; fill: #26a641; font-weight: bold; }
+  </style>
+  <rect width="900" height="650" fill="#0d1117" rx="8"/>
+  
+  <!-- Title -->
+  <text x="30" y="55" class="game-title">🎮 Contribution Quest</text>
+  
+  <!-- Level & XP Section -->
+  <g transform="translate(30, 90)">
+    <text x="0" y="0" class="section-title">Level 4</text>
+    <text x="200" y="0" class="xp-text">XP: 172</text>
+    <text x="0" y="50" class="stat-label">Progress to Level 5</text>
+    <rect x="0" y="60" width="400" height="20" fill="#21262d" rx="10"/>
+    <rect x="0" y="60" width="176" height="20" fill="url(#progressGradient)" rx="10"/>
+    <text x="410" y="75" class="xp-text">22/50</text>
+  </g>
+  
+  <!-- Stats Grid -->
+  <g transform="translate(30, 180)">
+    <text x="0" y="0" class="section-title">Stats</text>
+    <g transform="translate(0, 30)">
+      <text x="0" y="0" class="stat-label">Commits</text>
+      <text x="0" y="30" class="stat-value">172</text>
+      
+      <text x="150" y="0" class="stat-label">Repositories</text>
+      <text x="150" y="30" class="stat-value">10</text>
+      
+      <text x="300" y="0" class="stat-label">Stars</text>
+      <text x="300" y="30" class="stat-value">2</text>
+      
+      <text x="450" y="0" class="stat-label">Current Streak</text>
+      <text x="450" y="30" class="streak-text">1 🔥</text>
+      
+      <text x="0" y="70" class="stat-label">Longest Streak</text>
+      <text x="0" y="100" class="stat-value">4</text>
+      
+      <text x="150" y="70" class="stat-label">Last 7 Days</text>
+      <text x="150" y="100" class="stat-value">5</text>
+      
+      <text x="300" y="70" class="stat-label">Last 30 Days</text>
+      <text x="300" y="100" class="stat-value">5</text>
+    </g>
+  </g>
+  
+  <!-- Achievements Section -->
+  <g transform="translate(30, 350)">
+    <text x="0" y="0" class="section-title">Achievements (2)</text>
+    <g transform="translate(0, 30)">
+      
+        <g transform="translate(0, 0)">
+          <circle cx="20" cy="20" r="18" fill="#21262d" stroke="#58a6ff" stroke-width="2"/>
+          <text x="20" y="27" text-anchor="middle" font-size="20">🔥</text>
+          <text x="45" y="15" class="achievement-name">Active Coder</text>
+          <text x="45" y="28" class="achievement-desc">100+ commits</text>
+        </g>
+        <g transform="translate(210, 0)">
+          <circle cx="20" cy="20" r="18" fill="#21262d" stroke="#58a6ff" stroke-width="2"/>
+          <text x="20" y="27" text-anchor="middle" font-size="20">📁</text>
+          <text x="45" y="15" class="achievement-name">Multi-Project</text>
+          <text x="45" y="28" class="achievement-desc">10+ repositories</text>
+        </g>
+    </g>
+  </g>
+</svg>

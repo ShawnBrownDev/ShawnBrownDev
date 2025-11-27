@@ -29,11 +29,17 @@ jobs:
           GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
         run: npm run contributions
 
+      - name: Generate contribution game
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
+        run: npm run game
+
       - name: Commit changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add contributions.svg contributions-calendar.svg
-          git diff --staged --quiet || git commit -m "Auto-update contribution stats [skip ci]"
+          git add contributions.svg contributions-calendar.svg contributions-game.svg
+          git diff --staged --quiet || git commit -m "Auto-update contribution stats and game [skip ci]"
           git push
 

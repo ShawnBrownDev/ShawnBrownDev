@@ -7,7 +7,8 @@
     "generate": "node generate-skillmap.js",
     "update": "node update-skills.js",
     "contributions": "node get-contributions.js",
-    "update-all": "npm run update && npm run generate && npm run contributions"
+    "game": "node generate-contribution-game.js",
+    "update-all": "npm run update && npm run generate && npm run contributions && npm run game"
   },
   "keywords": [],
   "author": "",
