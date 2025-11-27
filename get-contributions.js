@@ -332,23 +332,23 @@ async function generateContributionsSVG(stats) {
 }
 
 function generateCalendarOnlySVG(dailyCommits, totalContributions) {
-  const squareSize = 10;
+  const squareSize = 11;
   const squareGap = 3;
   const weekGap = 2;
   const cellSize = squareSize + squareGap;
   
-  const leftMargin = 30;
-  const topMargin = 50;
-  const monthLabelHeight = 15;
+  const leftMargin = 27;
+  const topMargin = 55;
+  const monthLabelHeight = 17;
   
   const { calendarData, maxCommits } = generateCalendarHeatmap(dailyCommits);
   
   const calendarWidth = calendarData.length * (squareSize + weekGap) + leftMargin;
   const calendarHeight = 7 * cellSize + topMargin + monthLabelHeight;
   
-  const width = Math.max(800, calendarWidth + 50);
-  const height = calendarHeight + 30;
-  const padding = 15;
+  const width = Math.max(896, calendarWidth + 50);
+  const height = calendarHeight + 35;
+  const padding = 16;
   
   // Month labels
   const monthLabels = [];
@@ -367,55 +367,121 @@ function generateCalendarOnlySVG(dailyCommits, totalContributions) {
     }
   });
   
+  // Create all squares with index for animation
+  let squareIndex = 0;
+  const allSquares = calendarData.map((week, weekIndex) => 
+    week.map((day, dayIndex) => {
+      const x = weekIndex * (squareSize + weekGap);
+      const y = dayIndex * cellSize;
+      const color = getCommitColor(day.count, maxCommits);
+      const title = `${day.count} ${day.count === 1 ? 'contribution' : 'contributions'} on ${day.dateKey}`;
+      const index = squareIndex++;
+      const delay = index * 0.02; // Stagger animation
+      return { x, y, color, title, delay, count: day.count };
+    })
+  ).flat();
+  
   return `<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
   <style>
-    .calendar-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; fill: #e1e4e8; font-weight: 600; }
-    .month-label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 11px; fill: #8b949e; }
-    .day-label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 11px; fill: #8b949e; }
-    .legend-label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 10px; fill: #8b949e; }
+    .calendar-title { 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif; 
+      font-size: 16px; 
+      fill: #e6edf3; 
+      font-weight: 600; 
+    }
+    .month-label { 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif; 
+      font-size: 12px; 
+      fill: #7d8590; 
+    }
+    .day-label { 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif; 
+      font-size: 12px; 
+      fill: #7d8590; 
+    }
+    .legend-label { 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif; 
+      font-size: 11px; 
+      fill: #7d8590; 
+    }
+    .contribution-square {
+      cursor: pointer;
+      opacity: 0;
+      animation: fadeInSquare 0.3s ease-out forwards;
+      transition: opacity 0.2s ease, outline 0.1s ease;
+    }
+    .contribution-square:hover {
+      opacity: 1 !important;
+      outline: 2px solid rgba(240, 246, 252, 0.5);
+      outline-offset: -2px;
+    }
+    @keyframes fadeInSquare {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.7;
+      }
+    }
+    .loading {
+      animation: pulse 1.5s ease-in-out infinite;
+    }
   </style>
-  <rect width="${width}" height="${height}" fill="#0d1117" rx="6"/>
+  <rect width="${width}" height="${height}" fill="#0d1117"/>
   
   <!-- Title -->
-  <text x="${padding}" y="${padding + 12}" class="calendar-title">${totalContributions} contributions in the last year</text>
+  <text x="${padding}" y="${padding + 18}" class="calendar-title">${totalContributions} contributions in the last year</text>
   
   <!-- Month Labels -->
-  <g transform="translate(0, ${padding + 28})">
-    ${monthLabels.map(m => `<text x="${m.x}" y="0" class="month-label">${m.label}</text>`).join('\n    ')}
+  <g transform="translate(0, ${padding + 36})" opacity="0.9">
+    ${monthLabels.map((m, i) => `<text x="${m.x}" y="0" class="month-label" style="animation: fadeInSquare 0.4s ease-out ${i * 0.1}s forwards; opacity: 0;">${m.label}</text>`).join('\n    ')}
   </g>
   
   <!-- Day Labels -->
-  <g transform="translate(${padding}, ${padding + monthLabelHeight + 38})">
+  <g transform="translate(${padding}, ${padding + monthLabelHeight + 46})" opacity="0.9">
     ${['', 'Mon', '', 'Wed', '', 'Fri', ''].map((day, i) => 
-      day ? `<text x="0" y="${i * cellSize + 8}" class="day-label">${day}</text>` : ''
+      day ? `<text x="0" y="${i * cellSize + 9}" class="day-label" style="animation: fadeInSquare 0.4s ease-out ${i * 0.05}s forwards; opacity: 0;">${day}</text>` : ''
     ).join('\n    ')}
   </g>
   
   <!-- Calendar Grid -->
-  <g transform="translate(${leftMargin}, ${padding + monthLabelHeight + 33})">
-    ${calendarData.map((week, weekIndex) => 
-      week.map((day, dayIndex) => {
-        const x = weekIndex * (squareSize + weekGap);
-        const y = dayIndex * cellSize;
-        const color = getCommitColor(day.count, maxCommits);
-        const title = `${day.count} ${day.count === 1 ? 'contribution' : 'contributions'} on ${day.dateKey}`;
-        return `<rect x="${x}" y="${y}" width="${squareSize}" height="${squareSize}" fill="${color}" rx="2" opacity="0.9">
-          <title>${title}</title>
-        </rect>`;
-      }).join('\n    ')
+  <g transform="translate(${leftMargin}, ${padding + monthLabelHeight + 41})">
+    ${allSquares.map(square => 
+      `<rect 
+        x="${square.x}" 
+        y="${square.y}" 
+        width="${squareSize}" 
+        height="${squareSize}" 
+        fill="${square.color}" 
+        rx="2" 
+        class="contribution-square"
+        style="animation-delay: ${square.delay}s;"
+      >
+        <title>${square.title}</title>
+      </rect>`
     ).join('\n    ')}
   </g>
   
   <!-- Legend -->
-  <g transform="translate(${width - 200}, ${padding + 33})">
+  <g transform="translate(${width - 200}, ${padding + 39})" opacity="0.9">
     <text x="0" y="0" class="legend-label">Less</text>
     ${[0, 0.25, 0.5, 0.75, 1].map((intensity, i) => {
-      const x = 35 + i * (squareSize + 3);
+      const x = 38 + i * (squareSize + 3);
       const count = Math.round(intensity * maxCommits);
       const color = getCommitColor(count, maxCommits);
-      return `<rect x="${x}" y="-7" width="${squareSize}" height="${squareSize}" fill="${color}" rx="2"/>`;
+      return `<rect x="${x}" y="-8" width="${squareSize}" height="${squareSize}" fill="${color}" rx="2" style="animation: fadeInSquare 0.3s ease-out ${0.8 + i * 0.1}s forwards; opacity: 0;"/>`;
     }).join('')}
-    <text x="${185}" y="0" class="legend-label">More</text>
+    <text x="${188}" y="0" class="legend-label" style="animation: fadeInSquare 0.4s ease-out 1.3s forwards; opacity: 0;">More</text>
   </g>
 </svg>`;
 }

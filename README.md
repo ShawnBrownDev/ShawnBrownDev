@@ -58,8 +58,6 @@ I'm a passionate **Full Stack Developer** based in South Carolina, specializing 
 
 <div align="center">
 
-### Contribution Calendar
-
 ![Contribution Calendar](./contributions-calendar.svg)
 
 </div>
