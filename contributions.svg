@@ -1,0 +1,43 @@
+<svg width="700" height="400" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .stat-title { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 18px; font-weight: bold; fill: #58a6ff; }
+    .stat-label { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 14px; fill: #8b949e; }
+    .stat-value { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 24px; font-weight: bold; fill: #e1e4e8; }
+    .language-tag { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 12px; fill: #58a6ff; }
+  </style>
+  <rect width="700" height="400" fill="#0d1117"/>
+  
+  <!-- Title -->
+  <text x="30" y="50" class="stat-title">GitHub Contributions</text>
+  
+  <!-- Stats Grid -->
+  <g transform="translate(30, 80)">
+    <!-- Repositories -->
+    <text x="0" y="0" class="stat-label">Public Repositories</text>
+    <text x="0" y="35" class="stat-value">10</text>
+    
+    <!-- Stars -->
+    <text x="200" y="0" class="stat-label">Total Stars</text>
+    <text x="200" y="35" class="stat-value">2</text>
+    
+    <!-- Forks -->
+    <text x="400" y="0" class="stat-label">Total Forks</text>
+    <text x="400" y="35" class="stat-value">0</text>
+    
+    <!-- Commits -->
+    <text x="0" y="90" class="stat-label">Commits (Last Year)</text>
+    <text x="0" y="125" class="stat-value">169</text>
+    
+    <!-- Last 7 Days -->
+    <text x="200" y="90" class="stat-label">Commits (Last 7 Days)</text>
+    <text x="200" y="125" class="stat-value">2</text>
+    
+    <!-- Last 30 Days -->
+    <text x="400" y="90" class="stat-label">Commits (Last 30 Days)</text>
+    <text x="400" y="125" class="stat-value">2</text>
+    
+    <!-- Top Languages -->
+    <text x="0" y="180" class="stat-label">Top Languages</text>
+    <text x="0" y="210" class="language-tag">TypeScript</text><text x="120" y="210" class="language-tag">CSS</text><text x="240" y="210" class="language-tag">JavaScript</text><text x="360" y="210" class="language-tag">HTML</text><text x="480" y="210" class="language-tag">PLpgSQL</text>
+  </g>
+</svg>

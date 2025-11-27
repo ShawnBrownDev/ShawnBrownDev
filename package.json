@@ -5,7 +5,9 @@
   "main": "generate-skillmap.js",
   "scripts": {
     "generate": "node generate-skillmap.js",
-    "update": "node update-skills.js"
+    "update": "node update-skills.js",
+    "contributions": "node get-contributions.js",
+    "update-all": "npm run update && npm run generate && npm run contributions"
   },
   "keywords": [],
   "author": "",
