@@ -1,4 +1,4 @@
-# GitHub Profile
+# Hi, I'm Shawn 👋
 
 ## Dev Skill Map
 
