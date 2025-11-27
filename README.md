@@ -19,6 +19,12 @@
 
 ## 📊 GitHub Contributions
 
+### Contribution Calendar
+
+![Contribution Calendar](./contributions-calendar.svg)
+
+### Contribution Statistics
+
 ![Contributions](./contributions.svg)
 
 ---
