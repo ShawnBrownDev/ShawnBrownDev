@@ -13,8 +13,6 @@
       <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
     </a>
   </p>
-  
-  <img src="https://github-profile-trophy.vercel.app/?username=ShawnBrownDev&theme=dark&no-frame=true&no-bg=false&margin-w=4&column=7" alt="GitHub Trophies"/>
 </div>
 
 ---
@@ -73,20 +71,9 @@ I'm a passionate **Full Stack Developer** based in South Carolina, specializing 
 
 ---
 
-## 📊 GitHub Statistics & Activity
+## 📊 GitHub Activity
 
 <div align="center">
-
-### Profile Statistics
-
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=ShawnBrownDev&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=58a6ff&include_all_commits=true&count_private=true"/>
-<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ShawnBrownDev&layout=compact&theme=dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&langs_count=8"/>
-
-### Contribution Streak
-
-<img src="https://github-readme-streak-stats.demolab.com/?user=ShawnBrownDev&theme=dark&hide_border=true&background=0d1117&ring=58a6ff&fire=58a6ff&currStreakLabel=58a6ff" alt="GitHub Streak"/>
-
-### Activity Overview
 
 ![Contribution Calendar](./contributions-calendar.svg)
 
@@ -125,14 +112,5 @@ I'm a passionate **Full Stack Developer** based in South Carolina, specializing 
 
 **Thank you for visiting my profile!** 🙏
 
-[![Visitor Count](https://profile-counter.glitch.me/ShawnBrownDev/count.svg)](https://github.com/ShawnBrownDev)
-
 </div>
 
----
-
-<div align="center">
-  
-![GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=ShawnBrownDev&theme=github-dark&hide_border=true&area=true)
-
-</div>
