@@ -1,4 +1,4 @@
-<div align="center">
+``````````<div align="center">
   <h1>Hi there, I'm Shawn Brown 👋</h1>
   <h3>Full Stack Developer | Building Modern Web Applications</h3>
   
@@ -48,65 +48,14 @@ I'm a passionate **Full Stack Developer** based in South Carolina, specializing 
 
 </div>
 
-### Skill Proficiency
-
-![Skill Map](./skillmap.svg)
-
----
-
-## 📊 GitHub Activity & Contributions
-
-<div align="center">
-
-![Contribution Calendar](./contributions-calendar.svg)
-
-</div>
-
-<details>
-<summary><b>View Detailed Statistics</b></summary>
-
-### 🎮 Contribution Quest
-
-![Contribution Game](./contributions-game.svg)
-
-### Contribution Statistics
-
-![Contributions](./contributions.svg)
-
-</details>
-
----
-
-## 📈 GitHub Statistics
-
-<div align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=ShawnBrownDev&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=58a6ff&include_all_commits=true&count_private=true"/>
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ShawnBrownDev&layout=compact&theme=dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&langs_count=8"/>
-</div>
-
-<div align="center">
-  <img src="https://github-readme-streak-stats.demolab.com/?user=ShawnBrownDev&theme=dark&hide_border=true&background=0d1117&ring=58a6ff&fire=58a6ff&currStreakLabel=58a6ff" alt="GitHub Streak"/>
-</div>
-
----
-
-## 🏆 GitHub Achievements
-
-<div align="center">
-
-[![trophy](https://github-profile-trophy.vercel.app/?username=ShawnBrownDev&theme=dark&no-frame=true&column=7&margin-w=15&margin-h=15)](https://github.com/ryo-ma/github-profile-trophy)
-
-</div>
-
 ---
 
 ## 🤝 Connect With Me
-
+å
 <div align="center">
   
 [![Portfolio](https://img.shields.io/badge/Portfolio-Website-blue?style=for-the-badge&logo=google-chrome)](https://www.sbprotfolio.com/)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ShawnBrownDev)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shawn-brown-dev/)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ShawnBrownDev)å
 
 </div>
 
